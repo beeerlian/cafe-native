@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textFieldHeight">90px</dimen>
+    <dimen name="content_horizontal_margin">25px</dimen>
+    <dimen name="heading_2">30px</dimen>
+</resources>

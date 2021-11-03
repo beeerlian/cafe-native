@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemFood"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="10px"
+    android:onClick="gotoDetail">
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView"-->
+<!--        android:layout_width="200px"-->
+<!--        android:layout_height="150px"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        />-->
+    <TextView
+        android:id="@+id/nameFoodTV"
+        android:paddingLeft="10px"
+        android:layout_width="500px"
+        android:layout_height="300px"
+        android:layout_gravity="center_horizontal"
+        android:textSize="@dimen/heading_2"
+        />
+    <TextView
+        android:id="@+id/priceFoodTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/heading_2"/>
+
+</LinearLayout>
