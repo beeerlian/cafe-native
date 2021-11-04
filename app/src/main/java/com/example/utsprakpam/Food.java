@@ -4,10 +4,10 @@ import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
 public class Food {
-    String name;
-    String deskripsi;
-    String price;
-    Drawable imagePath;
+    public String name;
+    public String deskripsi;
+    public String price;
+    public Drawable imagePath;
 
     Food(String name, String deskripsi, Drawable path, String price){
         this.name = name;

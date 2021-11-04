@@ -3,4 +3,5 @@
     <dimen name="textFieldHeight">90px</dimen>
     <dimen name="content_horizontal_margin">25px</dimen>
     <dimen name="heading_2">30px</dimen>
+    <dimen name="heading_1">30px</dimen>
 </resources>

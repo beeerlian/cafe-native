@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <activity
+            android:name=".detail.DetailActivity"
+            android:exported="true"
+            android:label="Detail"/>
+        <activity
             android:name=".dashboard.DashboardActivity"
             android:exported="true"
-            android:label="Home"/>
+            android:label="Home" />
         <activity
             android:name=".MainActivity"
             android:exported="true"

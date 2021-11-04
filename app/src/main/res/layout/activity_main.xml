@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/username"
+
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -26,6 +27,7 @@
         <EditText
             android:id="@+id/Username"
             android:layout_width="match_parent"
+            android:hint="isi dengan admin"
             android:layout_height="@dimen/textFieldHeight"
             android:background="@drawable/edit_text_background"
             />
@@ -44,6 +46,7 @@
             android:id="@+id/Password"
             android:layout_width="match_parent"
             android:layout_height="@dimen/textFieldHeight"
+            android:hint="isi dengan admin"
             android:password="true"
             android:background="@drawable/edit_text_background"/>
 

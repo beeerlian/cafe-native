@@ -8,17 +8,28 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataSource {
-    public static String[] imagesPath = {"batagor", "black_salad", "cappuchino", "cheesecake", "cireng"};
-    public static String[] foodsName = {"batagor", "black_salad", "cappuchino", "cheesecake", "cireng"};
-    public static String[] foodsDesc = {"batagor Desc", "black_salad desc", "cappuchino desc", "cheesecake desc", "cireng desc"};
-    public static String[] foodsPrices = {"10.000", "15.000", "21.000", "30.000", "5.0000"};
 
 
+    List<Food> myFoodlist = new ArrayList<Food>();
 
-    public static List<Food> getAllFood(List<Drawable> image){
+    public static List<Food> getAllFood(Context context){
+        String[] imagesPath = {"batagor", "black_salad", "cappuchino", "cheesecake", "cireng"};
+        String[] foodsName = {"batagor", "black salad", "cappuchino", "cheesecake", "cireng"};
+        String[] foodsDesc = {context.getString(R.string.batagor_desc),
+                context.getString(R.string.black_salad_desc),
+                context.getString(R.string.cappuchino_desc),
+                context.getString(R.string.cheese_cake_desc),
+                context.getString(R.string.cireng_desc)};
+        String[] foodsPrices = {"10.000", "15.000", "21.000", "30.000", "5.0000"};
+        Drawable[] drawableImages = {
+                context.getDrawable(R.drawable.batagor),
+                context.getDrawable(R.drawable.black_salad),
+                context.getDrawable(R.drawable.cappuchino),
+                context.getDrawable(R.drawable.cheesecake),
+                context.getDrawable(R.drawable.cireng)};
         List<Food> foodList = new ArrayList<Food>();
-        for(int i = 0; i < image.size(); i++){
-            foodList.add(new Food(foodsName[i], foodsDesc[i], image.get(i), foodsPrices[i] ));
+        for(int i = 0; i < drawableImages.length; i++){
+            foodList.add(new Food(foodsName[i], foodsDesc[i], drawableImages[i], foodsPrices[i]));
         }
         return foodList;
     }

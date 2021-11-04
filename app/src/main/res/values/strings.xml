@@ -3,4 +3,9 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+    <string name="batagor_desc">Batagor dengan bumbu spesial, nikmati bersama orang yang spesial bagi anda. cita rasa yang tidak akan pernah bisa anda lupakan, nikmati sekarang</string>
+    <string name="black_salad_desc">Salad unik, yang hanya bisa anda nikmati disini. Terbuat dari bahan-bahan fresh dan berkualitas, mambuat cita rasa salad ini menjadi sangat unik dan tentunya akan memanjakan lidah anda.</string>
+    <string name="cappuchino_desc">Racikan kopi terbaik, terbuat dari biji kopi berkualitas, dibuat dengan cinta. Lengkapi harimu dengan segelas cappuchino dari kami.</string>
+    <string name="cheese_cake_desc">Kue lembut, dengan rasa keju yang nikmat. Cita rasa yang manis dan ringan, dengan berbagai cream rasa yang bisa kamu pilih sesuka hatimu.</string>
+    <string name="cireng_desc">Cireng ini bukan sembarang cireng, cita rasa yang khas tetapi familier di lidah anda menjadi salah satu keunggulan cireng kami, terdapat berbagai isian yang bisa kamu pilih sesukamu.</string>
 </resources>

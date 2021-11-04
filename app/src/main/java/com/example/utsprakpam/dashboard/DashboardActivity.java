@@ -7,6 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -30,29 +33,29 @@ public class DashboardActivity extends AppCompatActivity {
 
         RecyclerView articlesRV = findViewById(R.id.rvFoodList);
         //imageView = findViewById(R.id.imageView);
-        foodList = DataSource.getAllFood(getDrawableImagesfromStringPath(DataSource.imagesPath));
+        foodList = DataSource.getAllFood(getApplicationContext());
 
         FoodAdapter adapter = new FoodAdapter(foodList);
         articlesRV.setAdapter(adapter);
         articlesRV.setLayoutManager(new LinearLayoutManager(this));
+
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.option_menu, menu);
+        //getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+
     }
 
-    Drawable getDrawablePath(String path){
-        int imageResource = getResources().getIdentifier(path, null, getPackageName());
-        return getResources().getDrawable(imageResource);
-    }
+    public boolean onOptionsItemSelected(MenuItem item) {
 
-    public List<Drawable> getDrawableImagesfromStringPath(String[] paths){
-        List<Drawable> drawables = new ArrayList<Drawable>();
-        for(String path : paths){
-            drawables.add(getDrawablePath("@drawable/"+path));
-        }
-        return drawables;
-    }
-
-    public void gotoDetail(View view){
-        Intent gotoDetail = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(gotoDetail);
+        startActivity(new Intent(this, MainActivity.class));
         this.finish();
+
+        return true;
     }
+
 }

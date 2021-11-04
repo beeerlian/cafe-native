@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         loginIntent.putExtra("username", username);
         loginIntent.putExtra("password", password);
         startActivity(loginIntent);
-        this.finish();
+//        this.finish();
     }
 
     public void checkUserLoginData(View view){
