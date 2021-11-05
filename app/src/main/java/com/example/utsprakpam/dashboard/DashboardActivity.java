@@ -31,13 +31,12 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        RecyclerView articlesRV = findViewById(R.id.rvFoodList);
-        //imageView = findViewById(R.id.imageView);
+        RecyclerView foodRV = findViewById(R.id.rvFoodList);
         foodList = DataSource.getAllFood(getApplicationContext());
 
         FoodAdapter adapter = new FoodAdapter(foodList);
-        articlesRV.setAdapter(adapter);
-        articlesRV.setLayoutManager(new LinearLayoutManager(this));
+        foodRV.setAdapter(adapter);
+        foodRV.setLayoutManager(new LinearLayoutManager(this));
 
     }
     @Override
@@ -45,7 +44,6 @@ public class DashboardActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.option_menu, menu);
-        //getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
 
     }
