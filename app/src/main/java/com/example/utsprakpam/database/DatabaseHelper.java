@@ -44,12 +44,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 context.getString(R.string.cheese_cake_desc),
                 context.getString(R.string.cireng_desc)};
         String[] foodsPrices = {"10.000", "15.000", "21.000", "30.000", "5.0000"};
-        Drawable[] drawableImages = {
-                context.getDrawable(R.drawable.batagor),
-                context.getDrawable(R.drawable.black_salad),
-                context.getDrawable(R.drawable.cappuchino),
-                context.getDrawable(R.drawable.cheesecake),
-                context.getDrawable(R.drawable.cireng)};
         int[] images = {
                 R.drawable.batagor,
                 R.drawable.black_salad,
@@ -57,12 +51,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 R.drawable.cheesecake,
                 R.drawable.cireng,
         };
-        List<Food> foodList = new ArrayList<Food>();
-        for(int i = 0; i < drawableImages.length; i++){
-            foodList.add(new Food(foodsName[i], foodsDesc[i], drawableImages[i], foodsPrices[i], images[i]));
-        }
-        for(int i = 0; i < foodList.size(); i++){
-            addRecord(foodList.get(i));
+        for(int i = 0; i < images.length; i++){
+            addRecord(new Food(foodsName[i], foodsDesc[i], context.getDrawable(images[i]), foodsPrices[i], images[i]));
         }
     }
     @Override
@@ -112,17 +102,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // return contact list
         return foodList;
     }
-    public int getFoodsCount() {
-        try{
-            String countQuery = "SELECT  * FROM " + TABLE_FOODS;
-            SQLiteDatabase db = this.getReadableDatabase();
-            Cursor cursor = db.rawQuery(countQuery, null);
-            cursor.close();
 
-            // return count
-            return cursor.getCount();
-        }catch (SQLiteException e){
-            return 0;
-        }
-    }
 }
