@@ -43,7 +43,7 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
         TextView foodTV = holder.titleTV;
         ImageView foodImageView = holder.imageTv;
         TextView priceTV = holder.priceTV;
-        priceTV.setText(food.price);
+        priceTV.setText("Harga : " + food.price);
         foodTV.setText(food.name);
         //foodTV.setBackground(food.imagePath);
         foodImageView.setImageDrawable(food.imagePath);

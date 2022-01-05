@@ -8,12 +8,14 @@ public class Food {
     public String deskripsi;
     public String price;
     public Drawable imagePath;
+    public int imageUri;
 
-    Food(String name, String deskripsi, Drawable path, String price){
+    public Food(String name, String deskripsi, Drawable path, String price, int imageUri){
         this.name = name;
         this.deskripsi = deskripsi;
         this.price = price;
         this.imagePath = path;
+        this.imageUri = imageUri;
     }
 
 }

@@ -1,8 +1,14 @@
 package com.example.utsprakpam;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
+
+import com.example.utsprakpam.database.DatabaseHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +16,6 @@ import java.util.List;
 public class DataSource {
 
 
-    List<Food> myFoodlist = new ArrayList<Food>();
 
     public static List<Food> getAllFood(Context context){
         String[] imagesPath = {"batagor", "black_salad", "cappuchino", "cheesecake", "cireng"};
@@ -27,10 +32,24 @@ public class DataSource {
                 context.getDrawable(R.drawable.cappuchino),
                 context.getDrawable(R.drawable.cheesecake),
                 context.getDrawable(R.drawable.cireng)};
+        int[] images = {
+                R.drawable.batagor,
+                R.drawable.black_salad,
+                 R.drawable.cappuchino,
+                 R.drawable.cheesecake,
+                 R.drawable.cireng,
+        };
         List<Food> foodList = new ArrayList<Food>();
         for(int i = 0; i < drawableImages.length; i++){
-            foodList.add(new Food(foodsName[i], foodsDesc[i], drawableImages[i], foodsPrices[i]));
+            foodList.add(new Food(foodsName[i], foodsDesc[i], drawableImages[i], foodsPrices[i], images[i]));
         }
+        return foodList;
+    }
+
+    public static List<Food> getAllFoodFromDb(Context context){
+        DatabaseHelper db = new DatabaseHelper(context);
+        List<Food> foodList = new ArrayList<Food>();
+        foodList = db.getAllRecord(context);
         return foodList;
     }
 }
