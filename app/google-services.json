@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "406377917447",
+    "project_id": "java-fire-7c234",
+    "storage_bucket": "java-fire-7c234.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406377917447:android:bd5e68dfc1ce81386ecea2",
+        "android_client_info": {
+          "package_name": "com.example.utsprakpam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "406377917447-cmara5r15rcooh6ckpsmrb6pq96qv7p1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCoWy20_TFsxwbLXrn130Vu0zL0tIQ5af4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406377917447-cmara5r15rcooh6ckpsmrb6pq96qv7p1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
