@@ -11,7 +11,9 @@
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
         <activity
             android:name=".SignUp"
-            android:exported="true" />
+            android:exported="true"
+            android:label="Register"
+            />
         <activity
             android:name=".detail.DetailActivity"
             android:exported="true"

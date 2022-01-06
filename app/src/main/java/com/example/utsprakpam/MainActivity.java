@@ -51,13 +51,11 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                          gotoDashboard(email, password);
+                            gotoDashboard(email, password);
 
                         } else {
-                            // If sign in fails, display a message to the user.
                             showToast();
                         }
                     }
@@ -79,13 +77,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void checkUserLoginData(View view){
-        EditText usernameText = (EditText) findViewById(R.id.Username);
+        EditText emailText = (EditText) findViewById(R.id.Username);
         EditText passwordText = (EditText) findViewById(R.id.Password);
 
-        String username = usernameText.getText().toString();
+        String email = emailText.getText().toString();
         String password = passwordText.getText().toString();
 
-        login(username, password);
+        login(email, password);
     }
     public void showToast(){
         Context context = getApplicationContext();

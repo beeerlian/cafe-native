@@ -4,45 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".detail.DetailActivity"
-    android:orientation="vertical">
+    android:background="#172A4A"
+    android:orientation="vertical"
+    tools:context=".detail.DetailActivity">
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10px"
         android:orientation="vertical">
+
         <ImageView
             android:id="@+id/image_view"
             android:layout_width="fill_parent"
-            android:layout_height="400px"
-            android:adjustViewBounds="true"
+            android:layout_height="900px"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
+            android:adjustViewBounds="true"
+            android:background="#0F2045"
             android:scaleType="fitXY"
 
-            />
+            android:src="@drawable/batagor" />
+
         <TextView
-            android:layout_marginTop="10px"
+            android:layout_marginHorizontal="20dp"
             android:id="@+id/judul_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10px"
+            android:text="batagor"
+            android:textColor="#FFFFFF"
             android:textFontWeight="@integer/material_motion_duration_long_2"
-            android:textSize="40px"
-            />
+            android:textSize="80px"
+            android:textStyle="bold" />
+
         <TextView
-            android:layout_marginTop="8px"
             android:id="@+id/harga_tv"
+            android:layout_marginHorizontal="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textFontWeight="@integer/material_motion_duration_long_2"
-            android:textSize="@dimen/heading_2"
-            />
-        <TextView
             android:layout_marginTop="8px"
+            android:text="10.000"
+            android:textColor="#FFFFFF"
+            android:textFontWeight="@integer/material_motion_duration_long_2"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/deksripsi_tv"
+            android:layout_marginHorizontal="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            />
+            android:layout_marginTop="8px"
+            android:background="#00FFFFFF"
+            android:text="@string/batagor_desc"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 
 </ScrollView>

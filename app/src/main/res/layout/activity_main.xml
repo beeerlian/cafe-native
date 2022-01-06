@@ -3,66 +3,88 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/background_page"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    >
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/logoRegister"
+        android:layout_width="152dp"
+        android:layout_height="133dp"
+        android:layout_alignStart="@+id/formRegister"
+        android:layout_alignEnd="@+id/formRegister"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="clip_horizontal"
+        android:layout_marginStart="115dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginBottom="421dp"
+        android:src="@mipmap/ic_launcher" />
 
     <LinearLayout
-        android:layout_centerInParent="true"
+        android:id="@+id/formRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginHorizontal="@dimen/content_horizontal_margin">
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginHorizontal="@dimen/content_horizontal_margin"
+        android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Email"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textSize="@dimen/heading_2"/>
+            android:textSize="@dimen/heading_2" />
 
         <EditText
             android:id="@+id/Username"
             android:layout_width="match_parent"
-            android:hint="Input your email here"
             android:layout_height="@dimen/textFieldHeight"
             android:background="@drawable/edit_text_background"
-            />
+            android:hint="Input your email" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="@string/password"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textSize="@dimen/heading_2"/>
+            android:textSize="@dimen/heading_2" />
 
         <EditText
             android:id="@+id/Password"
             android:layout_width="match_parent"
             android:layout_height="@dimen/textFieldHeight"
+            android:background="@drawable/edit_text_background"
             android:hint="Your password"
-            android:password="true"
-            android:background="@drawable/edit_text_background"/>
+            android:password="true" />
 
         <Button
-            android:layout_marginTop="20px"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/rounded_button"
+            android:textColor="@color/white"
+            android:onClick="checkUserLoginData"
+            android:text="Login" />
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="LOGIN"
-            android:onClick="checkUserLoginData"/>
-        <Button
-            android:layout_marginTop="20px"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="SignUp"
-            android:onClick="gotoSignUpPage"/>
+            android:layout_gravity="center_horizontal"
+            android:layout_marginVertical="20dp"
+            android:onClick="gotoSignUpPage"
+            android:text="Belum memiliki akun? klik disini untuk daftar"
+            android:textSize="@dimen/heading_2" />
+
+        <!--        <Button-->
+        <!--            android:layout_marginTop="20px"-->
+        <!--            android:background="@drawable/rounded_button"-->
+        <!--            android:layout_width="300dp"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="end"-->
+        <!--            android:text="Login"-->
+        <!--            android:onClick="gotoLoginPage"/>-->
     </LinearLayout>
+
 </RelativeLayout>
