@@ -8,8 +8,6 @@ import java.util.List;
 
 public class DataSource {
 
-
-
     public static List<Food> getAllFood(Context context){
         String[] foodsName = {"batagor", "black salad", "cappuchino", "cheesecake", "cireng"};
         String[] foodsDesc = {context.getString(R.string.batagor_desc),

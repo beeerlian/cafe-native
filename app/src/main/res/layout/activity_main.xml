@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/username"
+            android:text="Email"
 
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -27,7 +27,7 @@
         <EditText
             android:id="@+id/Username"
             android:layout_width="match_parent"
-            android:hint="isi dengan admin"
+            android:hint="Input your email here"
             android:layout_height="@dimen/textFieldHeight"
             android:background="@drawable/edit_text_background"
             />
@@ -46,7 +46,7 @@
             android:id="@+id/Password"
             android:layout_width="match_parent"
             android:layout_height="@dimen/textFieldHeight"
-            android:hint="isi dengan admin"
+            android:hint="Your password"
             android:password="true"
             android:background="@drawable/edit_text_background"/>
 

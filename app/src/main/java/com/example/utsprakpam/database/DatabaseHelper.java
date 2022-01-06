@@ -36,7 +36,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public void initData(Context context){
-        String[] imagesPath = {"batagor", "black_salad", "cappuchino", "cheesecake", "cireng"};
         String[] foodsName = {"batagor", "black salad", "cappuchino", "cheesecake", "cireng"};
         String[] foodsDesc = {context.getString(R.string.batagor_desc),
                 context.getString(R.string.black_salad_desc),
@@ -57,10 +56,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_FOODS_TABLE = "CREATE TABLE " + TABLE_FOODS + "("
+        String CREATE_FOODS_TABLE_QUERY = "CREATE TABLE " + TABLE_FOODS + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT," + KEY_PATH + " INTEGER," + KEY_DESCR + " TEXT,"
                 + KEY_PRICE + " TEXT" + ")";
-        db.execSQL(CREATE_FOODS_TABLE);
+        db.execSQL(CREATE_FOODS_TABLE_QUERY);
     }
 
     @Override
@@ -83,23 +82,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public List<Food> getAllRecord(Context context) {
 
         List<Food> foodList = new ArrayList<Food>();
-        // Select All Query
-        String selectQuery = "SELECT  * FROM " + TABLE_FOODS;
-
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);
-        int i = 0;
+        Cursor cursor = db.rawQuery("SELECT  * FROM " + TABLE_FOODS, null);
         if (cursor.moveToFirst()) {
             do {
                 Food food = new Food(cursor.getString(1),
                         cursor.getString(3), context.getDrawable(cursor.getInt(2)),  cursor.getString(4), cursor.getInt(2));
 
                 foodList.add(food);
-                i++;
             } while (cursor.moveToNext());
         }
 
-        // return contact list
         return foodList;
     }
 

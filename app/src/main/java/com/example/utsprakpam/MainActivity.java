@@ -37,22 +37,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-
-        // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-
             String userActive = currentUser.getEmail();
             Log.println(Log.DEBUG, "user active", userActive );
             currentUser.reload();
-
         }
     }
 
-    public void login(String username, String password){
-//
-
-        mAuth.signInWithEmailAndPassword(username, password)
+    public void login(String email, String password){
+        mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -60,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                          gotoDashboard(username, password);
+                          gotoDashboard(email, password);
 
                         } else {
                             // If sign in fails, display a message to the user.
@@ -70,9 +64,9 @@ public class MainActivity extends AppCompatActivity {
                 });
     }
 
-    public void gotoDashboard(String username, String password){
+    public void gotoDashboard(String email, String password){
         Intent loginIntent = new Intent(getApplicationContext(), DashboardActivity.class);
-        loginIntent.putExtra("username", username);
+        loginIntent.putExtra("username", email);
         loginIntent.putExtra("password", password);
         startActivity(loginIntent);
         this.finish();

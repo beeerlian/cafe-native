@@ -45,7 +45,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
         TextView priceTV = holder.priceTV;
         priceTV.setText("Harga : " + food.price);
         foodTV.setText(food.name);
-        //foodTV.setBackground(food.imagePath);
         foodImageView.setImageDrawable(food.imagePath);
 
     }
@@ -62,8 +61,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
         public ImageView imageTv;
 
         public ViewHolder(View itemView) {
-            // Stores the itemView in a public final member variable that can be used
-            // to access the context from any ViewHolder instance.
             super(itemView);
 
             titleTV = (TextView) itemView.findViewById(R.id.nameFoodTV);
